@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>click me </button>
+    <script>
+       const url = "https://cat-fact.herokuapp.com/facts";
+        let api = async ()=>
+        {
+            console.log("gettiong data....")
+        let response = await fetch(url);
+        console.log(response);
+        let a = await response.json();
+        console.log(a[1].text)
+        let b = document.querySelector("button")
+        b.addEventListener("click",()=>
+        {
+            document.body.innerText=a[1].text
+
+        })
+        }
+        api ();
+        
+    </script>
+</body>
+</html>

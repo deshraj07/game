@@ -1,0 +1,65 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <style>
+        #aa{
+            margin: auto;
+            display:flex ;
+            justify-content: center;
+            gap: 5px;
+            background-color: white;
+            height: 100px;
+            width: 500px;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="aa">
+    <button id="but1" >
+        <img src="1.jpg" alt="rock" height="50px" width="150px"></button>
+    <button id="but2" >
+        <img src="2.png" alt="peaper" height="50px" width="150px"></button>
+    <button id="but3" >
+        <img src="3.jpg" alt="seccesior" height="50px" width="150px"></button>
+
+    </div>
+    <script>
+        alert("select one option");
+        let a = document.querySelector("#but1");
+        a.addEventListener("click",()=>
+        {
+            alert("you click on rock")
+        })
+        let b = document.querySelector("#but2");
+        b.addEventListener("click",()=>
+        {
+            alert("you click on paper")
+        })
+        let c = document.querySelector("#but3");
+        c.addEventListener("click",()=>
+        {
+            alert("you click on sessior")
+        })
+        alert("select one option");
+        let d = document.querySelector("#but1");
+        d.addEventListener("click",()=>
+        {
+            alert("you click on rock")   })
+        let e = document.querySelector("#but2");
+        e.addEventListener("click",()=>
+        {
+            alert("you click on paper")
+        })
+        let f = document.querySelector("#but3");
+        f.addEventListener("click",()=>
+        {
+            alert("you click on sessior")
+        })
+
+
+    </script>
+</body>
+</html>

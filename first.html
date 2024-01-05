@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <!--
+
+    <button>on/off </button>
+
+   
+    <button onclick="alert ('hellow')">click me </button>
+
+   
+
+    <p >this is my first code</p>
+
+    
+  
+    <div class="aa" style="height: 100px; width: 100px; background-color: blue;">hello 1</div>
+    <div class="aa" style="height: 100px; width: 100px; background-color: blue;">hello 2</div>
+    <div class="aa" style="height: 100px; width: 100px; background-color: blue;">hello 3</div>
+
+   
+ 
+   <h1  class="aa">hello world</h1>
+    <p class="aa">this is my first code</p>
+    <p class="aa">this is my second code</p> -->
+
+
+    <script>
+
+
+
+//using iife  way to execute a function 
+        pro = (data) =>{return  new Promise ((resolve,reject)=>
+            {
+    
+                console.log("featch data.....")
+                setTimeout(()=>{
+                    console.log(data)
+                resolve("done");
+            },4000)})
+        }
+       ( async  ()=>
+{
+    await pro(1);
+    await pro(2);
+    await pro(3);
+    await pro(4);
+    await pro(5);
+})();
+
+
+  /*
+
+         //most most simple version of following using async await to overcome the problem of promeses called promises
+
+        
+        
+
+        pro = (data) =>{return  new Promise ((resolve,reject)=>
+            {
+    
+                console.log("featch data.....")
+                setTimeout(()=>{
+                    console.log(data)
+                resolve("done");
+            },4000)})
+        }
+        async function data  ()
+{
+    await pro(1);
+    await pro(2);
+    await pro(3);
+    await pro(4);
+    await pro(5);
+}
+
+data();
+ console.log("hellow ")
+      
+
+         //most most simple version of following using promises chains to overcome the callback hell called promises
+
+
+        pro = () =>{return  new Promise ((resolve,reject)=>
+            {
+    
+                console.log("featch data1.....")
+                setTimeout(()=>{
+                resolve("done");
+            },4000)})
+    
+        }
+             pro1 = () =>{return  new Promise ((resolve,reject)=>
+            {
+    
+                console.log("featch data2.....")
+                setTimeout(()=>{
+                resolve("done");
+            },4000)})
+                
+        }
+        pro()
+            .then(()=>
+        {
+            console.log("done");
+            return pro1();
+       
+        }).then(()=>
+        {
+            console.log("done");
+        })
+
+        // simple version of following using promises chains to overcome the callback hell
+
+         pro = () =>{return  new Promise ((resolve,reject)=>
+        {
+
+            console.log("featch data1.....")
+            setTimeout(()=>{
+            resolve("done");
+        },4000)})
+
+    }
+         pro1 = () =>{return  new Promise ((resolve,reject)=>
+        {
+
+            console.log("featch data2.....")
+            setTimeout(()=>{
+            resolve("done");
+        },4000)})
+            
+    }
+    pro().then(()=>
+    {
+        console.log("done")
+    pro1().then(()=>
+    {
+        console.log("done")
+    })
+    })
+
+
+          
+//using promises chains to overcome the callback hell
+        let pro = new Promise ((resolve,reject)=>
+        {
+            console.log("featch data1.....")
+            resolve("done");
+        })
+        let pro1 = new Promise ((resolve,reject)=>
+        {
+            resolve("done");
+        })
+    
+        pro.then(
+            setTimeout(()=>{
+              
+                console.log("sucesssfully")
+                console.log("featch data2.....")
+            pro1.then(
+            setTimeout(()=>{
+                
+                console.log("sucesssfully2")
+    },4000))},4000))
+    
+
+
+      
+    let pro = new Promise ((resolve,reject)=>
+    {
+        console.log("hello ");
+       // resolve(console.log("world"));
+        reject(console.log("error"))
+    })
+
+    pro.catch(
+        setTimeout(()=>{console.log("rejected")
+},4000))
+
+  
+    pro.then(
+        setTimeout(()=>{console.log("suceesfully resolve")
+},4000))
+   
+
+
+       
+        function data(data){
+        return new Promise((resolve,reject)=>{
+            setTimeout(()=>{
+                console.log(data);
+                resolve("sucsex");
+            },5000)
+
+        })
+    }
+    data("dj")
+       
+
+
+        let promise = new Promise((resolve,reject)=>{
+            console.log("hello world");
+            resolve(console.log("good"));
+
+            reject("erroer")
+
+            
+        })
+
+
+        //delay print code 
+        a =(aa , aaa) =>{
+            setTimeout(()=>
+            {
+                console.log(aa);
+                if(aaa){
+                   aaa();
+                }
+            },2000)
+
+        }
+        a("dh" , ()=>
+        { 
+            a("dd"  ,()=>
+            { 
+                a("ddD") 
+            })
+        });
+
+
+         
+
+
+        sum = (a,b) =>
+        {
+            return a + b;
+        }
+
+        func1=( a,  sum )=>{
+            document.write(a +"hellow")
+        }
+        func1(sum(3,4));
+
+
+        
+
+        setTimeout(()=>
+        {
+            console.log("hello world");
+        },2000);
+
+
+
+        
+       
+        func =()=>{
+            console.log("helklowwww")
+        }
+        setTimeout(func,2000);
+
+
+
+        
+        
+
+        console.log("hellow");
+        try{
+            console.log(hellow);
+
+        }catch(err){
+            console.log("we found an error" + err)
+        }finally{
+            console.log("hurray")
+        }
+        console.log("hellow");
+
+                
+        class par {
+            constructor(name){
+                this.name=name;
+            }
+            f(){
+                console.log(this.name +" first method")
+            }
+            fi(){
+                console.log("second method")
+            }
+            fir(){
+                console.log("third method")
+            }
+        }
+
+        class ch extends par {
+            constructor(name){
+                super(name);
+                this.name = name;
+            }
+            g(){
+                console.log("helo mr " +this.name + "  this is an child class")
+            }
+        }
+        let obj = new ch("deshraj");
+
+ 
+
+        class homosabian{
+            constructor(name)
+            {
+                console.log(name);
+                this.name= name;
+            }
+            run(){
+                console.log(`${this.name} you run`);
+            };
+            jump(){
+                console.log(`${this.name} you jump`);
+            }
+            eat(){
+                console.log(`${this.name} you eat`);
+            }
+        }
+
+         let men = new homosabian("desraj");
+         let women = new homosabian("ladki");
+
+       
+        const emp ={
+            tax ()   //methode of emp object
+            {
+                console.log("hello ");
+            }
+        }
+        const ka = {
+            salary:10000,
+        };
+        ka.__proto__ = emp;  // using tax methode in ka object 
+
+
+          
+
+        let a = {
+            name: "desraj",
+            rollNo: 13,
+            class: "mca",
+            printMarks:  fun = ()=>
+        {
+            document.write(this.name);
+        }
+    }
+    fun()
+
+
+      
+
+     let b =  document.querySelector("button")
+     let a = 0;
+             b.addEventListener("click",func=()=>
+             {
+               
+                if(a==0){
+                 document.body.style.backgroundColor="black";
+                 a += 1;
+                
+                }
+                else{
+                 document.body.style.backgroundColor="white";
+                 a -=  1;
+                 
+             }
+            
+             })
+    
+
+  
+     
+     
+             //to add and remove an eventlistnear
+             let a =  document.querySelector("button")
+             a.addEventListener("click",func=()=>
+             {
+                 alert("hello world")
+             })
+             a.removeEventListener("click",func);
+     
+     
+             
+             
+             let a = document.querySelector("button");
+             a.onclick =(e)=>{
+                 console.log(e.type);
+                 alert("you click on wrong button ");
+             }
+     
+      
+             nn= document.querySelector("p");
+             i = document.createAttribute("style");
+             i.value = "color:red"
+             nn.setAttributeNode(i);
+             console.log(nn);
+             nn.remove();
+     
+              
+             
+     
+             but = document.createElement("button")
+             but.innerText = "click me"
+             but.style.height="50px"
+             but.style.width = "50px"
+     
+     
+             let a = document.querySelector(".aa");
+             console.dir(a.setAttribute("class","bb"))
+             console.log(a);
+             a.append(but)
+             //console.dir( a.getAttribute("style"));
+     
+            
+     
+     
+             for (i of a ){
+                 i.innerText ="by"
+             }
+             
+     
+     
+            // console.dir(window.document)//return values as objects 
+             //console.log(window.document)//return values as normal values 
+     
+     
+     
+         //let a = window.document.querySelector("p")
+     
+         //let a = window.document.querySelector("body").firstElementChild
+         //a.style.color="red"
+         //a.append("  hii")
+          //a.innerText = "this is changed content in code"
+     
+            
+     
+             console.dir(document.querySelector("body"))
+     
+     
+               
+             let a = [1,2, 100, 3,4 ];
+             const aa = a.reduce((res , val)=>{
+                 return res>val ? res : val ; // for greter value 
+             })
+             document.write(aa + "<br>");
+             document.write(a);
+             
+     
+           
+             let a = [1,2,3,4];
+             const aa = a.reduce((res , val)=>{
+                 return res + val;
+             })
+             document.write(aa + "<br>");
+             document.write(a);
+             
+            
+     
+             // simpal working of filter in js
+             let a = [2,34,5,6,7];
+             let aa = a.filter((val)=>{
+                 return val%2===0;
+             })
+             document.write(aa);
+     
+              
+             let a = [1,2,3,4];
+             a.forEach((i , idx , a)=>
+             {
+                 document.write(i*i + "<br>" , idx + "<br>" , a + "<br>");
+             })        
+            
+              //this is shotcut code of folloeing code
+             let x = 0;
+             let a = "raaam";
+             for (i of a) {
+                 if (i == "a" 
+                 || i == "e" 
+                 || i == "i" 
+                 || i == "o"
+                 || i == "u")
+                   {
+                     x++;
+                 }
+             }
+             document.write("this word conatin " + x + "    vovel words")
+     
+     
+            
+             let x =0;
+             let a = "ram";
+             for(i of a ){
+                 if (i=="a" || i=="e")
+                 {
+                     x++;
+                 }
+                 else if (i=="i" || i=="o")
+                 {
+                     x++
+                 }
+                 if (i=="i")
+                 {
+                     x++
+                 }
+                 else {
+     
+                 }
+             }
+             document.write("this word conatin "   +  x  + "    vovel words")
+             
+             
+             add = (a,b)=>{
+                 return a + b; //it opnly return one vlaue in this case it return sum of a and b
+     
+             }
+             document.write(add(2,3));
+     
+             
+             let a = [1,2,3,4,5,6];
+             a.splice(1 , 2 ); //delete an element in array
+             document.write(a);
+     
+             
+             let a = [1,2,3,4,5,6];
+             a.splice(1 , 0 , 100,101); //ADD NEW elements in array without any delete
+             document.write(a);
+     
+     
+             
+             let a = [1,2,3,4,5,6];
+             a.splice(1 , 2 , 100,101); // replace values in array
+             document.write(a);
+     
+             
+             let a = [1,23,4];
+             a.push("55","555");
+             document.write(a);
+             
+     
+             let a = [1090,200,3000,400,50,600];
+             for(i of a )
+             {
+                 let sum = i/10
+                 
+                 document.write(sum + "<br>")
+             }
+     
+     
+             
+             
+             let sum =0;
+             let a = [1,2,3,4,5,6];
+             for(i of a )
+             {
+                 sum += i ;
+                 
+             }
+             document.write(sum/a.length)
+     
+     
+             let a = [1,2,3,4,5,6];
+             for(i of a )
+             {
+     
+                 document.write(i + "<br>")
+             }
+             
+     
+             let a= [1,2,34,4];
+             a[2]=5; // array are muttable in js
+             document.write(a)
+              
+     
+             let a = "desraj";
+             document.write(a.replace("d","D"));
+             let b = "desdaj";
+             document.write(b.replaceAll("d","D"));
+     
+     
+              
+             let a = "desraj";
+             document.write(a.slice(2,4));
+     
+           
+             let a = "desraj";
+             document.write(a.toUpperCase());
+             document.write(a);
+     
+               
+             document.write( "des\nraj")//for new line in strings
+             document.write( "des\traj")//for tabular space  in strings0
+     
+     
+     
+           
+     
+             let a = "desraj"
+             for(i in a){
+                 document.write(a[i] + "<br>")
+             }
+             document.write(`${a[2]} <br>`) // called string interpolataion 
+             
+             document.write(a.length)
+     
+              
+     
+             for(i=1;i<=100;i++)
+             {
+                 x = i%2;
+                 if (x==0)
+                 {
+                     document.write(i + "<br>");
+                 }
+     
+     
+     
+             }
+     
+     
+             let student = {
+                 name:"desraj",
+                 rollno:13,
+                 pass: true
+             };
+             for(i in student){
+                 document.write( i + "  =   " , student[i] + "<br>");
+             }
+     
+     
+            
+     
+             let a = [1,2,3,4,56,]  //"deshraj ";
+             for( let i of a) //basically itr use for array and strings 
+             {
+                 document.write(i + "<br>");
+             }
+     
+     
+             
+     
+             
+             
+             
+     
+             let a = 1;
+             while(a<=5){
+                 document.write("hellow world" + "<br>");
+                 a++;
+             }
+     
+             
+     
+             var sum = 0;
+             let a = prompt("enter the numbers for natural sum ");
+             for(i=0;i<=a;i++){
+                 sum += i
+                 
+             }
+             document.write(sum);
+     
+             
+     
+             for(i=0;i<5;i++){
+                 document.write("hello world " + "<br>" )
+             }
+     
+             
+             
+             let a = prompt("enter your marks");
+             if(a>=100){
+                 document.write("plese enter correct number between 10 - 100")
+                 
+             }
+             else if(a>=80 && a<=100)  {                      
+                 document.write("congrates you got a grade")
+             }
+             else if(a>=60 && a<=80)
+             {
+             document.write("congrates you got b grade")
+             }
+             else if(a>=40 && a<=60)
+             {
+             document.write("congrates you got c grade")
+             }
+             else if(a>=20 && a<=40)
+             {
+             document.write("congrates you got d grade")
+             }
+     
+             else{
+                  document.write("you faild plese haed work nextt year");
+             }
+     
+               
+     
+             let age = "50" ;
+              switch (age)
+              {
+                 case("20"):
+                 {
+                     document .write("your age is 20 ");
+                     break ;
+                 }
+                 case("10"):
+                 {
+                     document .write("your age is 10 ");
+                     break ;
+                 }
+                 case("15"):
+                 {
+                     document .write("your age is 15 ");
+                     break ;
+                 }
+                 case("30"):
+                 {
+                     document .write("your age is 30 ");
+                     break ;
+                 }
+                 case("40"):
+                 {
+                     document .write("your age is 40 ");
+                     break ;
+                 }
+                 default:{
+                     document.write("your age is not found")
+                 }
+              }
+     
+            
+             let age = 20 
+             document.write(age>=18?"you vote":"not vote")
+     
+     
+     
+               
+             let a = 10 ;
+             
+             if(a==20){
+                 document.write("a== 20 ")
+             }
+             else if(a==15){
+                 document.write("a== 15 ")
+             }
+             if(a==10){
+                 document.write("a== 10 ")
+             }
+             else{
+                 document.write("not found")
+             }
+             documnet.write(a );
+     
+           
+     
+             let a = 5 ;
+             let b = 3;
+             console.log(a==b )
+       
+             let a = 5 ;
+             document.write(a +=5 )
+     
+           
+             let x = BigInt("364")
+             document .write(" in one year we have " + x + "days" ) */
+    </script>
+</body>
+
+</html>
